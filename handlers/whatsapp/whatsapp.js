@@ -11,7 +11,7 @@ const fse = require('fs-extra');
 let queue = {};
 setInterval(() => {
     for (let id in queue) {
-        msg.getChat().sendStateTyping()
+        queue[id].msg.getChat().sendStateTyping()
         if (queue[id].time + 5000 < Date.now()) {
             messageResponder(queue[id].msg);
             delete queue[id];
