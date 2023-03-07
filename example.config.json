@@ -1,0 +1,7 @@
+{
+    "openaiKey": "sk-############################",
+    "clientId": "Main",
+    "contextTokens": 2048,
+    "maxReplyTokens": 2048,
+    "maxAudioDuration": 600
+}
