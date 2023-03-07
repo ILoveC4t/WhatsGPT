@@ -14,7 +14,7 @@ setInterval(async () => {
         (await queue[id].msg.getChat()).sendStateTyping();
         if (queue[id].time + 5000 < Date.now()) {
             await messageResponder(queue[id].msg);
-            delete queue[id];
+            await delete queue[id];
         }
     }
 }, 500);
