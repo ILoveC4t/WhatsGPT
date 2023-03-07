@@ -11,7 +11,7 @@ const gpt3encoder = require('gpt-3-encoder');
 const schedule = nodeSchedule.scheduleJob('0 * * * *', cleanup);
 
 const dbPath = path.join(projectRoot, 'cache', 'cache.db');
-await fse.ensureDir(path.join(projectRoot, 'cache'));
+fse.ensureDir(path.join(projectRoot, 'cache'));
 const db = sqllite(dbPath);
 
 db.prepare('CREATE TABLE IF NOT EXISTS chats (chatID TEXT PRIMARY KEY)').run();
