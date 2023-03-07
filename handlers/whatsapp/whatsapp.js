@@ -9,12 +9,11 @@ const { cacheMessage, getMessages } = require('./subHandlers/messageCache');
 const fse = require('fs-extra');
 
 let queue = {};
-setInterval(async () => {
+setInterval(() => {
     for (let id in queue) {
-        (await queue[id].msg.getChat()).sendStateTyping();
         if (queue[id].time + 5000 < Date.now()) {
-            await messageResponder(queue[id].msg);
-            await delete queue[id];
+            messageResponder(queue[id].msg);
+            delete queue[id];
         }
     }
 }, 500);
