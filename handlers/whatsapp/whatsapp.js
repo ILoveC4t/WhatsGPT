@@ -121,10 +121,10 @@ async function logCleaner(chatID) {
 }
 
 async function secondsToTimeStr(seconds) {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const seconds = Math.floor(seconds % 60);
-    const timeStr = `${hours > 0 ? `${hours} hours, ` : ''}${minutes > 0 ? `${minutes} minutes, ` : ''}${seconds} seconds`;
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    const timeStr = `${hrs > 0 ? `${hrs} hours, ` : ''}${mins > 0 ? `${mins} minutes, ` : ''}${secs} seconds`;
     return timeStr;
 }
 
